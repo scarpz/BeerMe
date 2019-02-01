@@ -12,6 +12,7 @@ import Nuke
 class BeerDetailViewController: UIViewController {
 
     // MARK: - Outlets
+    // Beer information
     @IBOutlet private weak var beerName: UILabel!
     @IBOutlet private weak var beerTagline: UILabel!
     @IBOutlet private weak var beerImage: UIImageView!
@@ -21,6 +22,7 @@ class BeerDetailViewController: UIViewController {
     
     
     // MARK: - Properties
+    // Current selected Beer
     var beer: Beer!
     
     
@@ -33,6 +35,8 @@ class BeerDetailViewController: UIViewController {
     
 
     // MARK: - Actions
+    /// Method responsible to get all the Beer informatio
+    /// to share them
     @IBAction func shareBeer(_ sender: UIBarButtonItem) {
         
         var shareable = [Any]()
