@@ -35,6 +35,8 @@ class BeerListViewController: UIViewController {
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+        
     }
     
     private func getBeers() {

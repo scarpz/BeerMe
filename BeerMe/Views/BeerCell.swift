@@ -12,13 +12,25 @@ import Nuke
 class BeerCell: UITableViewCell {
 
     // MARK: - Outlets
+    // Beer info
     @IBOutlet private weak var beerName: UILabel!
     @IBOutlet private weak var beerAbv: UILabel!
     @IBOutlet private weak var beerImage: UIImageView!
+    // Outter view to host de ImageView inside
+    @IBOutlet private weak var outterView: UIView!
     
     
     // MARK: - Methods
+    
+    /// Setup all the information of the cell
+    ///
+    /// - Parameter beer: Beer to be displayed
     func setup(beer: Beer) {
+        
+        // Set the design of the OutterView
+        self.outterView.layer.cornerRadius = 10
+        
+        // Till the text informations
         self.beerName.text = beer.name
         self.beerAbv.text = "Abv: \(beer.abv)%"
         
