@@ -10,7 +10,7 @@ import Foundation
 
 class BeerServices {
     
-    func getBeers(page: Int, completion: @escaping ([Beer]?, Error?) -> Void) {
+    static func getBeers(page: Int, completion: @escaping ([Beer]?, Error?) -> Void) {
         
         let stringURL = BaseURL.getBeers.replacingOccurrences(of: "{page}", with: "\(page)")
         
@@ -20,7 +20,7 @@ class BeerServices {
                 if let data = data {
                     
                     do {
-                        var beers = try JSONDecoder().decode([Beer].self, from: data)
+                        let beers = try JSONDecoder().decode([Beer].self, from: data)
                         completion(beers, nil)
                         
                     } catch let error {

@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tUG-Ju-yJb">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="1" estimatedSectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="tUG-Ju-yJb">
                                 <rect key="frame" x="0.0" y="140" width="375" height="672"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -53,45 +53,51 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BeerCell" rowHeight="87" id="qa2-nZ-op2">
-                                        <rect key="frame" x="0.0" y="89" width="375" height="87"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BeerCell" rowHeight="108" id="qa2-nZ-op2" customClass="BeerCell" customModule="BeerMe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="89" width="375" height="108"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qa2-nZ-op2" id="Tgr-ZE-Z3L">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="86.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="107.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beerIcon" translatesAutoresizingMaskIntoConstraints="NO" id="3MS-je-hta">
-                                                    <rect key="frame" x="15" y="11" width="65" height="65"/>
+                                                    <rect key="frame" x="15" y="19" width="70" height="70"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="65" id="GWA-XE-Igg"/>
-                                                        <constraint firstAttribute="width" secondItem="3MS-je-hta" secondAttribute="height" multiplier="1:1" id="tsM-Qz-2rE"/>
+                                                        <constraint firstAttribute="width" secondItem="3MS-je-hta" secondAttribute="height" multiplier="1:1" id="Sxq-se-9Jl"/>
+                                                        <constraint firstAttribute="height" constant="70" id="p40-pR-lep"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trc-zZ-aW0">
-                                                    <rect key="frame" x="95" y="11" width="224" height="23"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                                    <rect key="frame" x="95" y="19" width="229" height="23"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="abv" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1s-T7-rQ4">
-                                                    <rect key="frame" x="95" y="42" width="224" height="21"/>
+                                                    <rect key="frame" x="95" y="44" width="229" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Z1s-T7-rQ4" firstAttribute="top" secondItem="trc-zZ-aW0" secondAttribute="bottom" constant="8" id="5B5-24-pl4"/>
-                                                <constraint firstItem="3MS-je-hta" firstAttribute="leading" secondItem="Tgr-ZE-Z3L" secondAttribute="leadingMargin" id="JYS-Qa-xa4"/>
-                                                <constraint firstItem="trc-zZ-aW0" firstAttribute="leading" secondItem="3MS-je-hta" secondAttribute="trailing" constant="15" id="OvT-bT-HbK"/>
-                                                <constraint firstItem="3MS-je-hta" firstAttribute="top" secondItem="Tgr-ZE-Z3L" secondAttribute="topMargin" id="R2A-Bh-4gy"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="trc-zZ-aW0" secondAttribute="trailing" constant="15" id="YjS-1B-Isc"/>
-                                                <constraint firstItem="3MS-je-hta" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Tgr-ZE-Z3L" secondAttribute="bottomMargin" id="ZNd-Wj-8tL"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Z1s-T7-rQ4" secondAttribute="trailing" constant="15" id="dPK-8e-v1g"/>
-                                                <constraint firstItem="trc-zZ-aW0" firstAttribute="top" secondItem="3MS-je-hta" secondAttribute="top" id="gT8-34-wA6"/>
-                                                <constraint firstItem="Z1s-T7-rQ4" firstAttribute="leading" secondItem="3MS-je-hta" secondAttribute="trailing" constant="15" id="iFX-st-e2O"/>
+                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="Z1s-T7-rQ4" secondAttribute="bottom" constant="8" id="2iu-F5-NkE"/>
+                                                <constraint firstItem="Z1s-T7-rQ4" firstAttribute="top" secondItem="trc-zZ-aW0" secondAttribute="bottom" constant="2" id="9F2-Av-Efa"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="trc-zZ-aW0" secondAttribute="trailing" constant="10" id="LCi-rW-ssb"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Z1s-T7-rQ4" secondAttribute="trailing" constant="10" id="LOh-fq-rae"/>
+                                                <constraint firstItem="3MS-je-hta" firstAttribute="top" secondItem="Tgr-ZE-Z3L" secondAttribute="topMargin" constant="8" id="MA1-kS-fIj"/>
+                                                <constraint firstItem="trc-zZ-aW0" firstAttribute="top" secondItem="Tgr-ZE-Z3L" secondAttribute="topMargin" constant="8" id="Oz4-d0-DY4"/>
+                                                <constraint firstItem="Z1s-T7-rQ4" firstAttribute="leading" secondItem="3MS-je-hta" secondAttribute="trailing" constant="10" id="n7N-TN-GmK"/>
+                                                <constraint firstItem="3MS-je-hta" firstAttribute="leading" secondItem="Tgr-ZE-Z3L" secondAttribute="leadingMargin" id="pWQ-ny-KzI"/>
+                                                <constraint firstItem="trc-zZ-aW0" firstAttribute="leading" secondItem="3MS-je-hta" secondAttribute="trailing" constant="10" id="qGa-CK-iPf"/>
+                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="3MS-je-hta" secondAttribute="bottom" constant="8" id="vnb-4W-5PU"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="beerAbv" destination="Z1s-T7-rQ4" id="tag-7W-Ip5"/>
+                                            <outlet property="beerImage" destination="3MS-je-hta" id="acO-28-7VE"/>
+                                            <outlet property="beerName" destination="trc-zZ-aW0" id="glM-rK-ted"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

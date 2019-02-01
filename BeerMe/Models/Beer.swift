@@ -21,7 +21,7 @@ struct Beer: Codable {
 extension Beer {
     
     // Enum of keys from the response of the Request
-    enum ResponseKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case id
         case name
         case description
@@ -36,11 +36,11 @@ extension Beer {
     
     init(from decoder: Decoder) throws {
         
-        // Get the container from the ResponseKeys
-        let container = try decoder.container(keyedBy: ResponseKeys.self)
-        
+        // Get the container from the CodingKeys
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
         // Try to get the values if present to each property
-        let id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
+        let id = try container.decodeIfPresent(Int.self, forKey: .id) ?? 0
         let name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
         let description = try container.decodeIfPresent(String.self, forKey: .description) ?? ""
         let imageURL = try container.decodeIfPresent(String.self, forKey: .imageURL) ?? ""
@@ -49,7 +49,7 @@ extension Beer {
         let ibu = try container.decodeIfPresent(Double.self, forKey: .ibu) ?? 0
         
         // And store them in your respective property
-        self.id = id
+        self.id = "\(id)"
         self.name = name
         self.description = description
         self.imageURL = imageURL

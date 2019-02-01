@@ -25,6 +25,7 @@ class BeerListViewController: UIViewController {
         super.viewDidLoad()
         
         self.setupBeerListView()
+        self.getBeers()
     }
     
     
@@ -39,6 +40,21 @@ class BeerListViewController: UIViewController {
     
     private func getBeers() {
         
+        BeerServices.getBeers(page: 1) { beers, error in
+            
+            if let beers = beers {
+                self.allBeers = beers
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self.createAlert(title: "Oops...", message: "\(error?.localizedDescription ?? "An error has occurred. Try again.")", okButton: "Try Again", okAction: { _ in
+                        self.getBeers()
+                    }, cancelButton: "Cancel")
+                }
+            }
+        }
     }
     
     // MARK: - Navigation
@@ -76,5 +92,14 @@ extension BeerListViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        
+    }
     
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
 }

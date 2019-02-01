@@ -20,7 +20,7 @@ class BeerCell: UITableViewCell {
     // MARK: - Methods
     func setup(beer: Beer) {
         self.beerName.text = beer.name
-        self.beerAbv.text = "\(beer.abv)"
+        self.beerAbv.text = "Abv: \(beer.abv)%"
         
         // Check a valid image URL based on the string value of the Beer
         if let url = URL(string: beer.imageURL) {
