@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		18D0ED312204BC160075F166 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D0ED302204BC160075F166 /* AppDelegate.swift */; };
-		18D0ED332204BC160075F166 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D0ED322204BC160075F166 /* ViewController.swift */; };
 		18D0ED362204BC160075F166 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D0ED342204BC160075F166 /* Main.storyboard */; };
 		18D0ED382204BC160075F166 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D0ED372204BC160075F166 /* Assets.xcassets */; };
 		18D0ED3B2204BC160075F166 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D0ED392204BC160075F166 /* LaunchScreen.storyboard */; };
@@ -17,7 +16,6 @@
 /* Begin PBXFileReference section */
 		18D0ED2D2204BC160075F166 /* BeerMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeerMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D0ED302204BC160075F166 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		18D0ED322204BC160075F166 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		18D0ED352204BC160075F166 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18D0ED372204BC160075F166 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18D0ED3A2204BC160075F166 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -35,6 +33,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		189FDFDE2204BD13001F54FD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		189FDFDF2204BD1A001F54FD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				18D0ED342204BC160075F166 /* Main.storyboard */,
+				18D0ED392204BC160075F166 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		189FDFE02204BD1F001F54FD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		189FDFE12204BD2C001F54FD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		189FDFE22204BD31001F54FD /* Mechanisms */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mechanisms;
+			sourceTree = "<group>";
+		};
+		189FDFE42204BD44001F54FD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				18D0ED372204BC160075F166 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		189FDFE52204BD50001F54FD /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				18D0ED302204BC160075F166 /* AppDelegate.swift */,
+				18D0ED3C2204BC160075F166 /* Info.plist */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		18D0ED242204BC150075F166 = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +106,13 @@
 		18D0ED2F2204BC160075F166 /* BeerMe */ = {
 			isa = PBXGroup;
 			children = (
-				18D0ED302204BC160075F166 /* AppDelegate.swift */,
-				18D0ED322204BC160075F166 /* ViewController.swift */,
-				18D0ED342204BC160075F166 /* Main.storyboard */,
-				18D0ED372204BC160075F166 /* Assets.xcassets */,
-				18D0ED392204BC160075F166 /* LaunchScreen.storyboard */,
-				18D0ED3C2204BC160075F166 /* Info.plist */,
+				189FDFE22204BD31001F54FD /* Mechanisms */,
+				189FDFE12204BD2C001F54FD /* Services */,
+				189FDFE02204BD1F001F54FD /* Models */,
+				189FDFDF2204BD1A001F54FD /* Views */,
+				189FDFDE2204BD13001F54FD /* Controllers */,
+				189FDFE42204BD44001F54FD /* Resources */,
+				189FDFE52204BD50001F54FD /* Support */,
 			);
 			path = BeerMe;
 			sourceTree = "<group>";
@@ -135,7 +188,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18D0ED332204BC160075F166 /* ViewController.swift in Sources */,
 				18D0ED312204BC160075F166 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,7 +336,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7T8R3N4U6X;
-				INFOPLIST_FILE = BeerMe/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/BeerMe/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -292,7 +344,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.scarpz.BeerMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -302,7 +354,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7T8R3N4U6X;
-				INFOPLIST_FILE = BeerMe/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/BeerMe/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +362,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.scarpz.BeerMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
