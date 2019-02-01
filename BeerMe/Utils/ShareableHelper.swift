@@ -10,7 +10,11 @@ import Foundation
 
 class ShareableHelper {
     
-    static func shareableMessage(beer: Beer) -> String{
+    /// Metohd responsible to prepare a String to share the Beer
+    ///
+    /// - Parameter beer: Beer to be shared
+    /// - Returns: String value with the formatted Beer info
+    static func shareableMessage(beer: Beer) -> String {
         
         var message = ""
         
