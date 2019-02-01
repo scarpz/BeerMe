@@ -12,7 +12,9 @@ import Foundation
 ///
 /// - invalidURL: Used when the String couldn't be converted to URL
 /// - generic: Generic Error
+/// - noBeers: There is no Beer in the response
 enum Errors: Error {
     case invalidURL
     case generic
+    case noBeers
 }

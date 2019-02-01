@@ -35,4 +35,33 @@ class BeerServices {
         }
     }
     
+    
+    static func getRandomBeer(completion: @escaping (Beer?, Error?) -> Void) {
+        
+        if let url = URL(string: BaseURL.getRandomBeer) {
+        
+            Request.request(url: url, method: .get, headers: nil, body: nil) { data, error in
+                
+                if let data = data {
+                    
+                    do {
+                        let beers = try JSONDecoder().decode([Beer].self, from: data)
+                        
+                        if let beer = beers.first {
+                            completion(beer, nil)
+                        } else {
+                            completion(nil, error)
+                        }
+                        
+                    } catch let error {
+                        completion(nil, error)
+                    }
+                } else {
+                    completion(nil, Errors.generic)
+                }
+            }
+        } else {
+            completion(nil, Errors.invalidURL)
+        }
+    }
 }

@@ -10,7 +10,6 @@ import UIKit
 
 class BeerListViewController: UIViewController {
 
-    
     // MARK: - Outlets
     @IBOutlet private weak var tableView: UITableView!
     
@@ -57,38 +56,59 @@ class BeerListViewController: UIViewController {
         }
     }
     
+    private func getRandomBeer() {
+        
+        let alert = UIAlertController(title: "Loading a random Beer", message: nil, preferredStyle: .alert)
+        self.present(alert, animated: true) {
+            
+            BeerServices.getRandomBeer(completion: { randomBeer, error in
+                if let randomBeer = randomBeer {
+                    DispatchQueue.main.async {
+                        self.dismiss(animated: true, completion: nil)
+                        self.performSegue(withIdentifier: "BeerDetailSegue", sender: randomBeer)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.dismiss(animated: true, completion: nil)
+                        self.createAlert(title: "Oops...", message: "\(error?.localizedDescription ?? "An error has occurred. Try again.")")
+                    }
+                }
+            })
+        }
+    }
+    
     // MARK: - Navigation
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "BeerDetailSegue" {
+            if let selectedBeer = sender as? Beer {
+                if let beerDetailVC = segue.destination as? BeerDetailViewController {
+                    beerDetailVC.beer = selectedBeer
+                }
+            }
+        }
+    }
+    
 }
 
 
 // MARK: - TableView Methos
 extension BeerListViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? 1 : self.allBeers.count
+        return self.allBeers.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifiers[indexPath.section]) {
-            
-            if indexPath.section == 0 {
+        if indexPath.row == 0 {
+            return tableView.dequeueReusableCell(withIdentifier: "RandomBeerCell") ?? UITableViewCell()
+        } else {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "BeerCell") as? BeerCell {
+                cell.setup(beer: self.allBeers[indexPath.row - 1])
                 return cell
             } else {
-                if let beerCell = cell as? BeerCell {
-                    beerCell.setup(beer: self.allBeers[indexPath.row])
-                    return beerCell
-                } else {
-                    return UITableViewCell()
-                }
+                return UITableViewCell()
             }
-        } else {
-            return UITableViewCell()
         }
     }
     
@@ -96,7 +116,11 @@ extension BeerListViewController: UITableViewDelegate, UITableViewDataSource {
         
         tableView.deselectRow(at: indexPath, animated: true)
         
-        
+        if indexPath.row == 0 {
+            self.getRandomBeer()
+        } else {
+            self.performSegue(withIdentifier: "BeerDetailSegue", sender: self.allBeers[indexPath.row - 1])
+        }
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
