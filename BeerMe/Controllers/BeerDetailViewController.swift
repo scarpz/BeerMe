@@ -7,10 +7,17 @@
 //
 
 import UIKit
+import Nuke
 
 class BeerDetailViewController: UIViewController {
 
     // MARK: - Outlets
+    @IBOutlet private weak var beerName: UILabel!
+    @IBOutlet private weak var beerTagline: UILabel!
+    @IBOutlet private weak var beerImage: UIImageView!
+    @IBOutlet private weak var beerDescription: UILabel!
+    @IBOutlet private weak var beerABV: UILabel!
+    @IBOutlet private weak var beerIBU: UILabel!
     
     
     // MARK: - Properties
@@ -21,16 +28,33 @@ class BeerDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setupBeerDetailView()
+        self.displayBeer()
     }
     
 
     // MARK: - Actions
+    @IBAction func shareBeer(_ sender: UIBarButtonItem) {
+        
+    }
     
     
     // MARK: - Methods
-    private func setupBeerDetailView() {
+    
+    /// Display all the Beer information on the View
+    private func displayBeer() {
         
-        self.navigationItem.title = self.beer.name
+        self.beerName.text = self.beer.name
+        self.beerTagline.text = self.beer.tagline
+        
+        // Check a valid image URL based on the string value of the Beer
+        if let url = URL(string: beer.imageURL) {
+            // If yes, download this imagem and display in the ImageView
+            loadImage(with: url, options: NukeOptions.imageLoading, into: self.beerImage)
+        }
+        
+        self.beerDescription.text = self.beer.description
+        
+        self.beerABV.text = "\(self.beer.abv)%"
+        self.beerIBU.text = "\(self.beer.ibu)%"
     }
 }
