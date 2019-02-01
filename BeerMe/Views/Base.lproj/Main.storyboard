@@ -13,7 +13,7 @@
         <!--Beers-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="BeerListViewController" customModule="BeerMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -107,6 +107,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Beers" id="d4V-Zx-fQk"/>
                     <connections>
+                        <outlet property="tableView" destination="tUG-Ju-yJb" id="29r-kt-QoY"/>
                         <segue destination="s1a-WT-iwL" kind="show" identifier="BeerDetailSegue" id="KQl-TH-8nR"/>
                     </connections>
                 </viewController>
