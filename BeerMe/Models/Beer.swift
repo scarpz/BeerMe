@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Beer {
+struct Beer: Codable {
     var id: String
     var name: String
     var description: String

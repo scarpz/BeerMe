@@ -13,6 +13,7 @@
 		187FF2C32204C9EE00150990 /* BeerServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187FF2C22204C9EE00150990 /* BeerServices.swift */; };
 		187FF2C52204CA4900150990 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187FF2C42204CA4900150990 /* RequestMethod.swift */; };
 		187FF2C72204CA5F00150990 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187FF2C62204CA5F00150990 /* Request.swift */; };
+		187FF2C92204CBE000150990 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187FF2C82204CBE000150990 /* Errors.swift */; };
 		189FDFE82204BDF9001F54FD /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189FDFE72204BDF9001F54FD /* BaseURL.swift */; };
 		189FDFEA2204C13B001F54FD /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189FDFE92204C13B001F54FD /* Beer.swift */; };
 		189FDFEC2204C565001F54FD /* BeerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189FDFEB2204C565001F54FD /* BeerCell.swift */; };
@@ -28,6 +29,7 @@
 		187FF2C22204C9EE00150990 /* BeerServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerServices.swift; sourceTree = "<group>"; };
 		187FF2C42204CA4900150990 /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
 		187FF2C62204CA5F00150990 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		187FF2C82204CBE000150990 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		189FDFE72204BDF9001F54FD /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 		189FDFE92204C13B001F54FD /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
 		189FDFEB2204C565001F54FD /* BeerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerCell.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				189FDFE72204BDF9001F54FD /* BaseURL.swift */,
 				187FF2BE2204C68200150990 /* NukeOptions.swift */,
 				187FF2C42204CA4900150990 /* RequestMethod.swift */,
+				187FF2C82204CBE000150990 /* Errors.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				189FDFEA2204C13B001F54FD /* Beer.swift in Sources */,
 				18D0ED312204BC160075F166 /* AppDelegate.swift in Sources */,
 				189FDFEC2204C565001F54FD /* BeerCell.swift in Sources */,
+				187FF2C92204CBE000150990 /* Errors.swift in Sources */,
 				187FF2BF2204C68200150990 /* NukeOptions.swift in Sources */,
 				187FF2C72204CA5F00150990 /* Request.swift in Sources */,
 				187FF2C32204C9EE00150990 /* BeerServices.swift in Sources */,
