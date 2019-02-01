@@ -11,6 +11,7 @@ import UIKit
 class BeerListViewController: UIViewController {
 
     // MARK: - Outlets
+    
     @IBOutlet private weak var tableView: UITableView!
     
     

@@ -35,6 +35,16 @@ class BeerDetailViewController: UIViewController {
     // MARK: - Actions
     @IBAction func shareBeer(_ sender: UIBarButtonItem) {
         
+        var shareable = [Any]()
+        
+        if let image = self.beerImage.image {
+            shareable.append(image)
+        }
+        
+        shareable.append(ShareableHelper.shareableMessage(beer: self.beer))
+        
+        let shareAlert = UIActivityViewController(activityItems: shareable, applicationActivities: nil)
+        self.present(shareAlert, animated: true, completion: nil)
     }
     
     
