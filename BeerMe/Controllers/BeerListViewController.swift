@@ -39,7 +39,7 @@ class BeerListViewController: UIViewController {
     
     private func getBeers() {
         
-        BeerServices.getBeers(page: 1) { beers, error in
+        BeerServices.getBeers(page: 1, amount: 25) { beers, error in
             
             if let beers = beers {
                 self.allBeers = beers
