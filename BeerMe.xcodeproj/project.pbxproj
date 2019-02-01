@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		189FDFE82204BDF9001F54FD /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189FDFE72204BDF9001F54FD /* BaseURL.swift */; };
 		18D0ED312204BC160075F166 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D0ED302204BC160075F166 /* AppDelegate.swift */; };
 		18D0ED362204BC160075F166 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D0ED342204BC160075F166 /* Main.storyboard */; };
 		18D0ED382204BC160075F166 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D0ED372204BC160075F166 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		189FDFE72204BDF9001F54FD /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 		18D0ED2D2204BC160075F166 /* BeerMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeerMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D0ED302204BC160075F166 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18D0ED352204BC160075F166 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -87,6 +89,14 @@
 			path = Support;
 			sourceTree = "<group>";
 		};
+		189FDFE62204BDEC001F54FD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				189FDFE72204BDF9001F54FD /* BaseURL.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		18D0ED242204BC150075F166 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +116,7 @@
 		18D0ED2F2204BC160075F166 /* BeerMe */ = {
 			isa = PBXGroup;
 			children = (
+				189FDFE62204BDEC001F54FD /* Utils */,
 				189FDFE22204BD31001F54FD /* Mechanisms */,
 				189FDFE12204BD2C001F54FD /* Services */,
 				189FDFE02204BD1F001F54FD /* Models */,
@@ -188,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				189FDFE82204BDF9001F54FD /* BaseURL.swift in Sources */,
 				18D0ED312204BC160075F166 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
